@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="QuickBooksApp.Forms.CustomerControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuickBooksApp.Forms"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d"                
+        Loaded="CustomerForm_OnLoaded">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <TextBox TextAlignment="Center" FontSize="18" BorderBrush="{DynamicResource AccentColorBrush}"
+                     BorderThickness="0 0 0 2" Focusable="False"
+                     >Customer View</TextBox>
+        </Grid>
+
+        <Label Name="LabelCustomer" Grid.Row="1" Grid.Column="0">Customers</Label>
+        <Label Grid.Row="2" Grid.Column="0">Name</Label>
+        <Label Grid.Row="2" Grid.Column="0" Margin="0 0 40 0" Foreground="Red" HorizontalAlignment="Right">*</Label>
+        <Label Grid.Row="3" Grid.Column="0">Phone</Label>
+        <Label Grid.Row="4" Grid.Column="0">Email</Label>
+        <Label Grid.Row="5" Grid.Column="0" >Company Name</Label>
+        <Label Grid.Row="6" Grid.Column="0">Balance</Label>
+
+
+        <ComboBox Name="CmboCustomer" Grid.Row="1" Grid.Column="1" Margin="3" IsEditable="False" SelectionChanged="CmboCustomer_OnSelectionChanged" />
+        <TextBox  Name="TxtCustomerName" Grid.Row="2" Grid.Column="1"   Margin="3" Height="27" />
+        <TextBox  Name="TxtPhone" Grid.Row="3" Grid.Column="1"  Margin="3" Height="27"/>
+        <TextBox  Name="TxtEmail" Grid.Row="4" Grid.Column="1"  Margin="3" LostFocus="TxtEmail_OnLostFocus" Height="27" />
+        <TextBox  Name="TxtCompany" Grid.Row="5" Grid.Column="1"  Margin="3" Height="27" />
+        <mah:NumericUpDown Name="TxtBalance" Grid.Row="6" Grid.Column="1" Margin="3" Height="27" Minimum="0" StringFormat="c2" HorizontalContentAlignment="Left"/>
+        <CheckBox Name="CheckBoxIsActive" Grid.Row="7" Grid.Column="1" Content="Is Active" Margin="5 0 0 0" />
+
+        <Button Name="BtnCancel"  Grid.Row="8" Grid.Column="1" Width="70" Content="Cancel" HorizontalAlignment="Right"  Margin="0 5 5 5" Click="BtnCancel_OnClick" />
+        <Button Name="BtnSave" Grid.Row="8" Grid.Column="1" Width="70" Content="Save" HorizontalAlignment="Right"  Margin="0 5 85 5" Click="BtnSave_OnClick"/>
+
+        <TextBlock Name="TxtError" Grid.Row="9" Grid.Column="1" TextAlignment="Center" TextWrapping="WrapWithOverflow" Foreground="Red" Margin="5" Focusable="False">
+
+        </TextBlock>
+
+
+    </Grid>
+</UserControl>
